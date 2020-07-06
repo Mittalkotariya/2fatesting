@@ -4,7 +4,7 @@
 
             <div class="modal-header">
                <h2 class="modal-title" style="text-align: center; font-size: 20px; color: #2980b9">
-                    Ready to go <span id="closeintromodal" class="modal-span-close" onclick="skipintro();">X</span>
+                   <span id="introheading">Ready to go</span> <span id="closeintromodal" class="modal-span-close" onclick="skipintro();">X</span>
                 </h2>
             <!-- <span class="modal-span-close" id="closeConfirmCloud">&times;</span> -->
 
@@ -14,15 +14,18 @@
             <div class="modal-body" style="height: auto;background-color: beige;">
 
                 <div >
-                    <h3 style="color: red;text-align: center;">User Two Factor enrollment is enabled and administrators can setup Two factor on next login. You can logout and get the same experience as your users.</h3>
-                    <h3 style="color: red;"><span style="text-decoration: underline;color:black;">Configure Myself</span> : You can logout and get the same experience as your users. </h3>
-                    <h3 style="color: red;"><span style="text-decoration: underline;color:black;">Logout</span> : You can logout and get the same experience as your users. </h3>
+                    <h3 id="introinfo" style="color: black;text-align: center;">User Two Factor enrollment is enabled and administrators can setup Two factor on next login. You can logout and get the same experience as your users.</h3>
+                    <h3 style="color: black;" class="readytogo"><span style="text-decoration: underline;color:red;">Configure Now</span> : You can logout and get the same experience as your users. </h3>
+                    <h3 style="color: black;" class="readytogo"><span style="text-decoration: underline;color:red;">User Experience</span> : Know how the users will configure 2fa. </h3>
+                    <h3 style="color: black;display:none;" class="logout"><span style="text-decoration: underline;color:red;">Logout</span> : You can logout and get the same experience as your users. </h3>
 
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="mo_wpns_button mo_wpns_button1 modal-button" style="width: 40%;background-color:#ff4168;" onclick="skipintro();">Configure Myself</button>
-                <button type="button" class="mo_wpns_button mo_wpns_button1 modal-button" style="width: 40%;background-color:#61ace5;" title="Logout and check the user experience" onclick="mo2f_userlogout()">Logout Now</button>
+                <button type="button" class="mo_wpns_button mo_wpns_button1 modal-button readytogo" style="width: 40%;background-color:#ff4168;" onclick="skipintro();">Configure Now</button>
+                <button type="button" class="mo_wpns_button mo_wpns_button1 modal-button readytogo" style="width: 50%;background-color:#61ace5;" onclick="mo2f_userexperience()">User Experience</button>
+                <button type="button" class="mo_wpns_button mo_wpns_button1 modal-button logout" style="width: 40%;background-color:#61ace5;display:none;" onclick="mo2f_readytogo()">Back</button>
+                <button type="button" class="mo_wpns_button mo_wpns_button1 modal-button logout" style="width: 40%;background-color:#61ace5;display:none;" title="Logout and check the user experience" onclick="mo2f_userlogout()">Logout Now</button>
             </div>
             </div>
         </div>
@@ -35,6 +38,22 @@
              <input type="hidden" name="option" value="mo2f_userlogout"/>
          </form>
  <script>
+     function mo2f_userexperience() {
+            jQuery("#introheading").html("User Experince");
+            jQuery('.readytogo').hide();
+            // jQuery('.readytogo').css('display', 'none');
+            jQuery('.logout').show();
+            // jQuery('.logout').css('display', 'block');
+            jQuery("#introinfo").html("Open different browser or private or incognito browser where you are not already logged in. Now log into your account you will be prompted for 2fa setup. Or just Logout Now.");
+     }
+     function mo2f_readytogo() {
+            jQuery("#introheading").html("Ready to go");
+            jQuery('.logout').hide();
+            // jQuery('.logout').css('display', 'none');
+            jQuery('.readytogo').show();
+            // jQuery('.readytogo').css('display', 'block');
+            jQuery("#introinfo").html("User Two Factor enrollment is enabled and administrators can setup Two factor on next login. You can logout and get the same experience as your users.");
+     }
      function mo2f_userlogout() {
          jQuery("#mo2f_userlogoutform").submit();
      }

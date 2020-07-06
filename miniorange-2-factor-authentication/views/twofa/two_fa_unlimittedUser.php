@@ -152,7 +152,7 @@ if(MO2F_IS_ONPREM && current_user_can('administrator'))
         <p> You can manage one two-factor code for multiple websites. You can use the same second-factor code to log in to all your websites on which miniOrange 2-factor plugin is installed. It will keep the second factor in sync on all your website.
 
         <hr>
-        <h2  style="text-align: center;"> Enable Two-Factor for single User
+        <h2  style="text-align: center;"> Enable Two-Factor for One User
             <label class='mo_wpns_switch' >
                 <input type="checkbox" name="singleUser" id="singleUser" onclick="display_cloud_popup()" />
                 <span class='mo_wpns_slider mo_wpns_round'></span>

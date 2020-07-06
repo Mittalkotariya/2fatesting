@@ -2181,7 +2181,7 @@ class Miniorange_Password_2Factor_Login {
 					{
 							$this->miniorange_initiate_2nd_factor($currentuser, null , $redirect_to ,  "" , $session_id );
 					}
-					elseif(MO2F_IS_ONPREM && $mo2f_configured_2FA_method =='Email Verification')
+					else if(MO2F_IS_ONPREM && $mo2f_configured_2FA_method =='Email Verification')
 					{
 						$this->miniorange_initiate_2nd_factor($currentuser, null , $redirect_to ,  null ,$session_id  );
 					}

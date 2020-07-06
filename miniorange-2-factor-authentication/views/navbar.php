@@ -31,7 +31,7 @@ $security_features_nonce = wp_create_nonce('mo_2fa_security_features_nonce');
 					<a class="add-new-h2" style="font-size:17px;border-radius:4px;" href="'.$help_url.'">FAQs</a>
 					<a class="license-button add-new-h2" style="font-size:17px;border-radius:4px;" href="'.$request_demo_url.'">Request for Demo</a>
 					<a class="add-new-h2" style="font-size:17px;border-radius:4px;background-color:orange; color:black;" href="'.$addons_url.'">AddOns</a>
-					<a class="add-new-h2" id ="mo_2fa_upgrade_tour" style="font-size:17px;border-radius:4px;background-color:orange; color:black;" href="'.$upgrade_url.'">license plan</a>';
+					<a class="add-new-h2" id ="mo_2fa_upgrade_tour" style="font-size:17px;border-radius:4px;background-color:orange; color:black;" href="'.$upgrade_url.'">Licensing Plans</a>';
 					//if(get_option("mo_wpns_2fa_with_network_security"))
 				//	{
 					echo '	
